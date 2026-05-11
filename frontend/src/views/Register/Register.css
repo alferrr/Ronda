@@ -1,0 +1,87 @@
+@import "../Login/Login.css";
+
+.register {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--color-background);
+}
+
+.register__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* margin-bottom: 32px; */
+  font-size: 28px;
+}
+
+.register__brand h1 {
+  font-family: var(--heading);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--color-primary);
+}
+
+.register__card {
+  /* background: var(--color-surface); */
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 16px;
+  padding: 36px;
+  width: 100%;
+  max-width: 460px;
+  /* box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); */
+}
+
+.register__head {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.register__head h2 {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.register__head p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.register__footer {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.register__footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register__footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .register__card {
+    padding: 28px 20px;
+  }
+}

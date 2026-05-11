@@ -1,0 +1,173 @@
+/* Login.css — uses global tokens from App.css */
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--color-background);
+}
+
+.login__brand {
+  display: flex;
+  align-items: center;
+  /* gap: 10px; */
+  /* margin-bottom: 32px; */
+}
+
+.login__brand-icon {
+  font-size: 28px;
+}
+
+.login__brand h1 {
+  font-family: var(--heading);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--color-primary);
+}
+
+.login__card {
+  /* background: var(--color-surfac e); */
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 16px;
+  padding: 36px;
+  width: 100%;
+  max-width: 420px;
+  /* box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); */
+}
+
+.login__head {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.login__head h2 {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.login__head p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ── Shared form primitives (imported by other views via Login.css) ── */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: #f9f9f9;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  color: #1a1a1a;
+  font-family: var(--body);
+  font-size: 15px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-error {
+  font-size: 13px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--heading);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+  margin-top: 4px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Login-specific ── */
+
+.login__footer {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.login__footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login__footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login__card {
+    padding: 28px 20px;
+  }
+}

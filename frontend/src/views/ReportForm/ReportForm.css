@@ -1,0 +1,331 @@
+@import "../Login/Login.css";
+
+.report-form-page {
+  min-height: 100vh;
+  background: var(--color-background);
+  color: #1a1a1a;
+  font-family: var(--body);
+  padding-bottom: 48px;
+}
+
+/* Header slides up on scroll down, returns on scroll up */
+.report-form-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+  z-index: 10;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+  opacity: 1;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.report-form-header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.report-form-header h1 {
+  font-family: var(--heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 0;
+  font-family: var(--body);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-back::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-bottom: 1px;
+}
+
+.btn-back:hover {
+  color: var(--color-primary);
+}
+
+/* Form */
+.report-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-section-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* Incident grid */
+.incident-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.incident-tile {
+  background: var(--color-surface);
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  color: #374151;
+  font-size: 14px;
+  font-family: var(--body);
+  font-weight: 500;
+  padding: 14px 16px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    color 0.15s;
+}
+
+.incident-tile:hover {
+  border-color: var(--color-primary);
+  background: #fdf2f2;
+}
+
+.incident-tile.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+/* Location button */
+.btn-locate {
+  background: var(--color-surface);
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+  color: #6b7280;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-locate::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  flex-shrink: 0;
+}
+
+.btn-locate:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-locate.captured {
+  border-style: solid;
+  border-color: #22c55e;
+  color: #16a34a;
+  background: #f0fdf4;
+}
+
+.btn-locate.captured::before {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.btn-locate:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.coords-hint {
+  font-size: 12px;
+  color: #9ca3af;
+  font-family: monospace;
+}
+
+/* Photo drop */
+.photo-drop {
+  background: var(--color-surface);
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  min-height: 120px;
+}
+
+.photo-drop:hover {
+  border-color: var(--color-primary);
+}
+
+.photo-drop__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.photo-drop__icon {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  position: relative;
+}
+
+.photo-drop__icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+}
+
+.photo-drop:hover .photo-drop__placeholder {
+  color: var(--color-primary);
+}
+
+.photo-drop:hover .photo-drop__icon,
+.photo-drop:hover .photo-drop__icon::before {
+  border-color: var(--color-primary);
+}
+
+.photo-preview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Submit */
+.btn-submit {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--heading);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+
+.btn-submit:hover:not(:disabled) {
+  opacity: 0.88;
+}
+.btn-submit:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.btn-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Success */
+.report-success {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--color-background);
+  color: #1a1a1a;
+  font-family: var(--body);
+  text-align: center;
+  padding: 24px;
+}
+
+.report-success__check {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #22c55e;
+  position: relative;
+}
+
+.report-success__check::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -55%) rotate(45deg);
+  width: 10px;
+  height: 18px;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+}
+
+.report-success h2 {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.report-success p {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+@media (max-width: 480px) {
+  .incident-grid {
+    grid-template-columns: 1fr;
+  }
+}

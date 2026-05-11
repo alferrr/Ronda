@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-primary: #8b0000;
+  --color-background: #f0f0f0;
+  --color-surface: #ffffff;
+  --heading: "DM Sans", sans-serif;
+  --body: "Inter", sans-serif;
+}
+
+body {
+  background: var(--color-background);
+  font-family: var(--body), sans-serif;
+  position: relative;
+}
