@@ -23,3 +23,7 @@ body {
   font-family: var(--body), sans-serif;
   position: relative;
 }
+
+input {
+  font-size: 1rem;
+}
